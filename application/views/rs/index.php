@@ -56,7 +56,7 @@ $this->load->view('template/sidebar');
                 </thead>
                 <tbody>
 
-                  <?php foreach ($rs as $rs):?>
+                  <?php foreach ($data as $rs):?>
 
                     <tr>
                       <td><?php echo $rs['id_rs']?></td>
@@ -113,10 +113,26 @@ $this->load->view('template/sidebar');
 
 
       <!-- MODAL DELETE -->
-      <?php foreach ($rs as $rs):
-        echo $rs;
-      ?>
-
+      <?php foreach ($data as $rs):?>
+        <div class="modal fade" id="modalDelete<?php echo $rs['id_rs']?>" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <div class="modal-body">
+                          <p>Are you sure want to delete this item?</p>
+                          <div class="pull-right">
+                            <a href="<?php echo base_url().'pegawai/remove/'.$rs['id_rs'] ?>" type="button" value="Remove" class="btn btn-danger">Remove</a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                          <br>
+                    </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       <?php endforeach; ?>
       <!-- MODAL DELETE -->
 

@@ -10,11 +10,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     }
 
-
     function index(){
-      $this->load->model('model_rumahSakit');
-      $data['rs'] = $this->model_rumahSakit->getData();
-      print_r($data['rs']);
+
+      $data['data'] = $this->model_rumahSakit->getData();
+
       $this->load->view('rs/index', $data);
     }
 

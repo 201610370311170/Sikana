@@ -23,7 +23,7 @@ class Ibu extends CI_Controller {
 		$data['records'] 			= $this->model_ibu->getData();
 		$data['data'] 				= $this->model_pegawai->getData();
 
-
+		
 		$this->load->view('pasien/ibu/start', $data);
 	}
 
